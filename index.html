@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+   <!--  Meta  -->
+   <meta charset="UTF-8" />
+   <title>Weather App</title>
+
+   <!--jQuery, linked from a CDN-->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+   <script>
+   $(document).ready(function() {
+      $(".getWeather").on("click", function(){  
+         //API call for current weather
+         $.getJSON('http://api.openweathermap.org/data/2.5/weather?zip=60618,us&units=imperial&appid=a3952d609786e4d345c7162a226c4833', function(json){
+            $(".description").html(json.weather.description);
+            $(".temp").html(json.main.temp);
+            $(".name").html(json.name);
+         });
+      });
+   });
+   </script>
+    
+  
+</head>
+<body>
+   <h1>Weather for 60618</h1>
+   <button class = "getWeather btn btn-primary">Get Weather</button>
+   <p class=name></p> 
+   <p class=description></p>
+   <p class=temp></p>
+   
+</body>
+</html>
