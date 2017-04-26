@@ -9,41 +9,13 @@
 
    <!--jQuery, linked from a CDN-->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-   <script>
-   
-   $(document).ready(function() {
-      $(".getWeather").on("click", function(){  
-         //assign zipcode from user input and create API call url.
-         var unitType = $("input[name=radioTemp]:checked").val();
-         var zip = $("#zipCode").val();
-         console.log(unitType);
-         if (unitType == 1){
-            unitType = "imperial";
-         }
-         else if(unitType == 2){
-            unitType ="metric";
-         }
-         else{
-           $(".description").html("Please choose Farenheit or Celcius.") 
-         }
-         console.log(unitType);
-         var url ='http://api.openweathermap.org/data/2.5/weather?zip='+zip+',us&units='+unitType+'&appid=a3952d609786e4d345c7162a226c4833';
-         console.log(url);
-         
-         //API call for current weather
-         $.getJSON(url, function(json){
-            $(".description").html(json.weather[0].description);
-            $(".temp").html("Temperature " + json.main.temp);
-            $(".name").html("Today's Weather for " + json.name +":");
-         });
-      });
-   });
-   
-   </script>
+      
+   <link rel="stylesheet" type="text/css" href="style.css">
+  
     
   
 </head>
-<body>
+<body class=main>
    <h1>Enter Zip Code for Weather Report</h1>
       <input id="zipCode" type="text" value=""></input>
       <button class = "getWeather btn btn-primary">Get Weather</button>
@@ -53,6 +25,10 @@
    <h2 class=name></h2>
    <p class=temp></p>
    <p class=description></p>
+   <img class=icon src="" alt="weather icon" style="visibility:hidden">
+
+   <!--link to javascript file-->
+   <script type="text/javascript" src="logic.js"></script>
 
 </body>
 </html>
