@@ -18,14 +18,14 @@
 <body class=main>
    <h1>Enter Zip Code for Weather Report</h1>
       <input id="zipCode" type="text" value=""></input>
-      <button class = "getWeather btn btn-primary">Get Weather</button>
+      <button id="getWeather" class = "btn btn-primary">Get Weather</button>
    <br>
-   <label><input type="radio" name ="radioTemp" value ="imperial">Farenheit</label>
+   <label><input type="radio" name ="radioTemp" value ="imperial" checked>Farenheit</label>
    <label><input type="radio" name ="radioTemp" value ="metric">Celcius</label>   
-   <h2 class=name></h2>
-   <p class=temp></p>
-   <p class=description></p>
-   <img class=icon src="" alt="weather icon" style="visibility:hidden">
+   <h2 id="name"></h2>
+   <p id="temp"></p>
+   <p id="description"></p>
+   <img id="icon" src="" alt="weather icon" style="visibility:hidden">
 
    <!--link to javascript file-->
    <script type="text/javascript" src="logic.js"></script>
