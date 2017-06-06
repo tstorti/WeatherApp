@@ -7,7 +7,7 @@
          
          //API call for current weather
             $.getJSON(url, function(json){
-            $(".description").html(json.weather[0].description);
+            $("#description").html(json.weather[0].description);
             $("#temp").html("Temperature " + json.main.temp);
             $("#name").html("Today's Weather for " + json.name +":");
             $("#icon").attr("src", "http://openweathermap.org/img/w/"+json.weather[0].icon+".png");
